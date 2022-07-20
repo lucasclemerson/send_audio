@@ -34,6 +34,13 @@
                     reader.onloadend = () =>{
                         //mostra os dados em base64
                         //console.log(reader.result);
+                        //$('body').append('<p>' + reader.result + '</p>');
+                    
+                        // vamos criar a tag para mostrar os audios
+                        const audio = document.createElement('audio');
+                        audio.src=reader.result;
+                        audio.controls=true;
+                        $('body').append(audio);
                     }
                 }
                 mediaRecorder.start()
